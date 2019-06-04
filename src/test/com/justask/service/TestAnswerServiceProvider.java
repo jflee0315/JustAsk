@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 
 import com.justask.Exception.NoAnswerException;
 
-import service.AnserServiceProvider;
+import service.AnswerServiceProvider;
 import service.AnswerService;
 
 class TestAnswerServiceProvider {
-	private AnserServiceProvider provider;
+	private AnswerServiceProvider provider;
 	@BeforeEach
 	void setup() {
-		provider = new AnserServiceProvider();
+		provider = new AnswerServiceProvider();
 	}
 	@Test
 	void shouldProvideAnswerServiceOrNoAnswerException() {

@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.justask.Exception.NoAnswerException;
 
-public class AnserServiceProvider {
+public class AnswerServiceProvider {
 	private List<AnswerService> services;
-	public AnserServiceProvider() {
+	public AnswerServiceProvider() {
 		services = new ArrayList<>();
 		services.add(new MathService());
 	}

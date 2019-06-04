@@ -28,9 +28,4 @@ public class MathService implements QuestionTypeJudge, AnswerService{
 		question = question.replaceAll("[?=]", "");
 		return "Math problem. Not implemented yet.";
 	}
-	
-	public static void main(String[] args) {
-		MathService s = new MathService();
-		s.provideAnswer("");
-	}
 }

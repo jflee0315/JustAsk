@@ -1,31 +1,30 @@
 package com.justask;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-import com.justask.io.FileUI;
+import com.justask.Exception.NoAnswerException;
+import com.justask.io.AskUI;
+import com.justask.io.CmdUI;
+
+import service.AnswerService;
+import service.AnswerServiceProvider;
 /**
  * Entry point for the project
  */
 public class JustAsk {
 	//This will be the entry point
 	public static void main(String[] args) {
-//		final Scanner sc = new Scanner(System.in);
-//		AskUI ui = new CmdUI(()->{return sc.nextLine();}, (s) -> {System.out.println(s);});
-//		ui.requestForQuestion("Please provide a question:");
-//		ui.outputAnswer("This is the answer, you are welcome.");
 		
+		final Scanner sc = new Scanner(System.in);
+		AskUI ui = new CmdUI(()->{return sc.nextLine();}, (s) -> {System.out.println(s);});
+		String question = ui.requestForQuestion("Please provide a question:");
+		AnswerService service = null;
 		try {
-			FileUI fi = new FileUI(FileUI.getDefaultScanner("test.txt"), FileUI.getDefaultWriter("testout.txt"));
-			String question = fi.requestForQuestion(null);
-			System.out.println(question);
-			fi.outputAnswer("The solution to the question: '" + question + "' is 'Not implemented yet'");
-		} catch (IOException e) {
-			System.out.println("Error accessing the file");
-			e.printStackTrace();
+			service = new AnswerServiceProvider().correspondService(question);
+		} catch (NoAnswerException e) {
+			ui.outputAnswer("Can't find answer for this type of question.");
+			return;
 		}
-		
-		
+		ui.outputAnswer(service.provideAnswer(question));
 	}
-
 }

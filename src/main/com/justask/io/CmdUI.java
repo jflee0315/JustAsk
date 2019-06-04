@@ -21,11 +21,3 @@ public class CmdUI implements AskUI{
 		printer.println(answer);
 	}
 }
-@FunctionalInterface
-interface Printer {
-	public void println(String output);
-}
-@FunctionalInterface
-interface Reader {
-	public String readLine();
-}

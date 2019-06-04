@@ -3,13 +3,13 @@ package com.justask.handler;
 import com.justask.Exception.NoAnswerException;
 import com.justask.io.AskUI;
 
-import service.AnserServiceProvider;
+import service.AnswerServiceProvider;
 import service.AnswerService;
 
 public class JustAskHandler {
 	private AskUI ui;
-	private AnserServiceProvider serviceProvider;
-	public JustAskHandler(AskUI ui, AnserServiceProvider serviceProvider) {
+	private AnswerServiceProvider serviceProvider;
+	public JustAskHandler(AskUI ui, AnswerServiceProvider serviceProvider) {
 		this.ui = ui;
 		this.serviceProvider = serviceProvider;
 	}
