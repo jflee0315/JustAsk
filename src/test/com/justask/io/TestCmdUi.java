@@ -1,9 +1,12 @@
-package com.justask;
+package com.justask.io;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import com.justask.io.AskUI;
+import com.justask.io.CmdUI;
 
 class TestCmdUi {
 	private static AskUI ui;

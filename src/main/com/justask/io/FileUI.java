@@ -1,4 +1,4 @@
-package com.justask;
+package com.justask.io;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
+/**
+ * Allows user to ask question and get answer from files
+ */
 public class FileUI implements AskUI{
 	private Scanner sc;
 	private PrintWriter writer;
