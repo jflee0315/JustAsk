@@ -2,9 +2,8 @@ package com.justask.handler;
 
 import com.justask.Exception.NoAnswerException;
 import com.justask.io.AskUI;
-
-import service.AnswerServiceProvider;
-import service.AnswerService;
+import com.justask.service.AnswerService;
+import com.justask.service.AnswerServiceProvider;
 
 public class JustAskHandler {
 	private AskUI ui;

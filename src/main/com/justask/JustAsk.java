@@ -5,9 +5,8 @@ import java.util.Scanner;
 import com.justask.Exception.NoAnswerException;
 import com.justask.io.AskUI;
 import com.justask.io.CmdUI;
-
-import service.AnswerService;
-import service.AnswerServiceProvider;
+import com.justask.service.AnswerService;
+import com.justask.service.AnswerServiceProvider;
 /**
  * Entry point for the project
  */

@@ -1,13 +1,8 @@
-package service;
+package com.justask.service;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
-
-import http.ConnectionUtil;
-import http.ConnectionUtil.HttpException;
 
 public class MathService implements QuestionTypeJudge, AnswerService{
 	private ArrayDeque<Character> operators;

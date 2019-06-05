@@ -9,9 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import com.justask.Exception.NoAnswerException;
 
-import service.AnswerServiceProvider;
-import service.AnswerService;
-
 class TestAnswerServiceProvider {
 	private AnswerServiceProvider provider;
 	@BeforeEach

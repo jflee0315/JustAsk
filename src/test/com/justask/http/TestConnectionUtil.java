@@ -1,11 +1,12 @@
 package com.justask.http;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
-import http.ConnectionUtil;
-import http.ConnectionUtil.HttpException;
+import com.justask.http.ConnectionUtil.HttpException;
 
 class TestConnectionUtil {
 
