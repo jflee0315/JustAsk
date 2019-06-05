@@ -7,7 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import com.justask.io.AskUI;
 import com.justask.io.CmdUI;
-
+/**
+ * 
+ * Test CmdUI
+ *
+ */
 class TestCmdUi {
 	private static AskUI ui;
 	private static String testInput;
@@ -16,12 +20,14 @@ class TestCmdUi {
 	static void setup() {
 		ui = new CmdUI(()->{return testInput;}, (s) -> {testOutput = s;});
 	}
+	
 	@Test
 	void shouldOutputCorrectly() {
 		String answer = "This is the ultimate answer to your question!";
 		ui.outputAnswer(answer);
 		assertEquals(answer, testOutput);
 	}
+	
 	@Test
 	void shouldProvideAnInput() {
 		testInput = "Please provide an question, human!";

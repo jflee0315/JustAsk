@@ -11,7 +11,11 @@ import com.justask.service.AnswerServiceProvider;
  * Entry point for the project
  */
 public class JustAsk {
-	//This will be the entry point
+	/**
+	 * This will be the entry point
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		final Scanner sc = new Scanner(System.in);

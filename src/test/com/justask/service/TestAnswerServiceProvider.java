@@ -8,13 +8,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.justask.Exception.NoAnswerException;
-
+/**
+ * 
+ * Test service provider
+ *
+ */
 class TestAnswerServiceProvider {
 	private AnswerServiceProvider provider;
 	@BeforeEach
 	void setup() {
 		provider = new AnswerServiceProvider();
 	}
+	/**
+	 * NoAnswerException or an AnswerService are both acceptable
+	 */
 	@Test
 	void shouldProvideAnswerServiceOrNoAnswerException() {
 		AnswerService service = null;

@@ -4,15 +4,31 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+/**
+ * 
+ * Utility for sending http request
+ *
+ */
 public class ConnectionUtil {
 	private static ConnectionUtil instance = new ConnectionUtil();
 	private ConnectionUtil() {
 		
 	}
+	/**
+	 * Singleton
+	 * 
+	 * @return ConnectionUtil instance
+	 */
 	public static ConnectionUtil getInstance() {
 		return instance;
 	}
+	/**
+	 * Send http get
+	 * 
+	 * @param url
+	 * @return
+	 * @throws HttpException
+	 */
 	public String sendGet(String url) throws HttpException {
 
 		HttpURLConnection con;

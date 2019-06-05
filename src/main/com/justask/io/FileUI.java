@@ -12,17 +12,34 @@ import java.util.Scanner;
 public class FileUI implements AskUI{
 	private Scanner sc;
 	private PrintWriter writer;
-	
+	/**
+	 * inject resources
+	 * 
+	 * @param sc
+	 * @param writer
+	 */
 	public FileUI(Scanner sc, PrintWriter writer) {
 		this.sc = sc;
 		this.writer = writer;
 	}
-	
+	/**
+	 * Get default scanner
+	 * 
+	 * @param filename
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public static Scanner getDefaultScanner(String filename) throws FileNotFoundException {
 		Scanner sc = new Scanner(new File(filename));
 		return sc;
 	}
-	
+	/**
+	 * Get default writer
+	 * 
+	 * @param filename
+	 * @return
+	 * @throws IOException
+	 */
 	public static PrintWriter getDefaultWriter(String filename) throws IOException{
 		PrintWriter pr = new PrintWriter(new FileWriter(filename));
 		return pr;
