@@ -1,7 +1,7 @@
 # JustAsk
 Term project for CS622
 
-##What does it do
+## What does it do
 You can ask a question, and it will try to answer.
 
 ## How to execute
