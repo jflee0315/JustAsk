@@ -40,12 +40,13 @@ public class ConnectionUtil {
 
 			// optional default is GET
 			con.setRequestMethod("GET");
-
-			//add request header
-			con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36");
-
+			
 			int responseCode = con.getResponseCode();
-			if (responseCode != 200) {
+			// can't find an answer
+			if (responseCode == 501) {
+				return null;
+			}
+			else if (responseCode != 200) {
 				throw new HttpException();
 			}
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));

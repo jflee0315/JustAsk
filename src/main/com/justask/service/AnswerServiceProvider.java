@@ -15,6 +15,7 @@ public class AnswerServiceProvider {
 		services = new ArrayList<>();
 		// add all available services here
 		services.add(new MathService());
+		services.add(new SimpleQuestionService());
 	}
 	/**
 	 * Provide a service to answer the question. It throws NoAnswerException when no adequate service can be found. 

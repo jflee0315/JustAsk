@@ -18,6 +18,7 @@ public class MathService implements QuestionTypeJudge, AnswerService{
 		 Pattern p = Pattern.compile("^[=?0-9)(*/+-]+$");
 		 return p.matcher(question).matches();
 	}
+	
 	/**
 	 * 
 	 * Provide an answer

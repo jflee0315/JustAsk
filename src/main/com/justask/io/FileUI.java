@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Scanner;
 /**
  * Allows user to ask question and get answer from files
@@ -63,5 +64,12 @@ public class FileUI implements AskUI{
 	public void close() {
 		sc.close();
 		writer.close();
+	}
+	@Override
+	public void displayHistory(List<String> questions) {
+		for(String q: questions) {
+			writer.println(q);
+		}
+		writer.flush();
 	}
 }
