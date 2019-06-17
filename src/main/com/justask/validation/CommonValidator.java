@@ -1,4 +1,4 @@
-package validation;
+package com.justask.validation;
 
 import java.util.Arrays;
 import java.util.HashSet;

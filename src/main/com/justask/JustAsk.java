@@ -1,5 +1,8 @@
 package com.justask;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import com.justask.Exception.NoAnswerException;
@@ -8,12 +11,13 @@ import com.justask.io.CmdUI;
 import com.justask.service.AnswerService;
 import com.justask.service.AnswerServiceProvider;
 import com.justask.service.HistoryService;
-
-import validation.CommonValidator;
+import com.justask.validation.CommonValidator;
 /**
  * Entry point for the project
  */
 public class JustAsk {
+	private static Connection conn = null;
+    private static Statement stmt = null;
 	/**
 	 * This will be the entry point
 	 * 
@@ -37,4 +41,18 @@ public class JustAsk {
 		}
 		ui.outputAnswer(service.provideAnswer(question));
 	}
+	
+	
+	
+	private static void insertHistory(String question, int id) {
+        try {
+            stmt = conn.createStatement();
+            stmt.execute("insert into History (Id, question) values ('"+question+"')");
+            stmt.close();
+        }
+        catch (SQLException e) {
+        	e.printStackTrace();
+        }
+        
+    }
 }
