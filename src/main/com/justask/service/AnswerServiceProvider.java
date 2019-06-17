@@ -14,7 +14,7 @@ public class AnswerServiceProvider {
 	public AnswerServiceProvider() {
 		services = new ArrayList<>();
 		// add all available services here
-		services.add(new MathService());
+		services.add(new SimpleMathService());
 		services.add(new SimpleQuestionService());
 	}
 	/**

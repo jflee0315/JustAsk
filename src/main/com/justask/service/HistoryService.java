@@ -16,7 +16,7 @@ public class HistoryService {
 	}
 	public void add(String question) {
 		h.addHistory(question);
-		HistoryRepository.replaceHistory(h);
+		HistoryRepository.addHistory(question);
 	}
 	public List<String> get() {
 		return h.getHistory();

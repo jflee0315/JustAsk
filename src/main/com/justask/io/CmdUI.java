@@ -33,9 +33,11 @@ public class CmdUI implements AskUI{
 			printer.println("There is no previous question.");
 		} else {
 			printer.println("Previous questions:");
+			printer.println("-----------------------");
 			for (String q: questions) {
 				printer.println("-" + q);
 			}
+			printer.println("-----------------------");
 		}	
 	}
 }

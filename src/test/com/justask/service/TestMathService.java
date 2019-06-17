@@ -13,10 +13,10 @@ import org.junit.jupiter.api.Test;
  *
  */
 class TestMathService {
-	private MathService service;
+	private SimpleMathService service;
 	@BeforeEach
 	void setup() {
-		service = new MathService();
+		service = new SimpleMathService();
 	}
 
 	@Test

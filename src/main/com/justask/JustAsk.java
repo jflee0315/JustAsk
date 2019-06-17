@@ -16,8 +16,7 @@ import com.justask.validation.CommonValidator;
  * Entry point for the project
  */
 public class JustAsk {
-	private static Connection conn = null;
-    private static Statement stmt = null;
+	
 	/**
 	 * This will be the entry point
 	 * 
@@ -40,19 +39,7 @@ public class JustAsk {
 			return;
 		}
 		ui.outputAnswer(service.provideAnswer(question));
-	}
-	
-	
-	
-	private static void insertHistory(String question, int id) {
-        try {
-            stmt = conn.createStatement();
-            stmt.execute("insert into History (Id, question) values ('"+question+"')");
-            stmt.close();
-        }
-        catch (SQLException e) {
-        	e.printStackTrace();
-        }
-        
-    }
+		System.out.print("Ask another question(Y or N)?");
+		
+	}	
 }
