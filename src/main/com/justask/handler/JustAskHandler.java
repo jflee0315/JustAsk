@@ -4,6 +4,8 @@ import com.justask.Exception.NoAnswerException;
 import com.justask.io.AskUI;
 import com.justask.service.AnswerService;
 import com.justask.service.AnswerServiceProvider;
+import com.justask.service.HistoryService;
+import com.justask.validation.CommonValidator;
 /**
  * 
  * Main handler for the project
@@ -26,13 +28,17 @@ public class JustAskHandler {
 	 * Starting point
 	 */
 	public void start() {
-		String question = ui.requestForQuestion("What do you want to ask?");
-		AnswerService answerService = null;
+		ui.displayHistory(HistoryService.getInstance().get());
+		String question = ui.requestForQuestion("Please provide a question:");
+		question = CommonValidator.filter(question);
+		HistoryService.getInstance().add(question);
+		AnswerService service = null;
 		try {
-			answerService = serviceProvider.correspondService(question);
+			service = new AnswerServiceProvider().correspondService(question);
 		} catch (NoAnswerException e) {
-			ui.outputAnswer("Sorry, I am not able to answer that question. Please try another question.");
+			ui.outputAnswer("Can't find answer for this question.");
+			return;
 		}
-		ui.outputAnswer(answerService.provideAnswer(question));
+		ui.outputAnswer(service.provideAnswer(question));
 	}
 }

@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 class TestCommonValidator {
 
 	@Test
-	void shouldFilterOutCurseWords() {
+	void testFilter() {
 		assertEquals("This is nice", CommonValidator.filter("This shit is nice"));
 	}
-
 }

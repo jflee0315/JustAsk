@@ -58,13 +58,13 @@ class TestFileUI {
 		}
 	}
 	@Test
-	void shouldOutputCorrectly() {
+	void testOutputAnswer() {
 		String answer = "This is the ultimate answer to your question!";
 		ui.outputAnswer(answer);
 		assertEquals(answer, scOutput.nextLine());
 	}
 	@Test
-	void shouldProvideAnInput() {
+	void testRequestForQuestion() {
 		inputWriter.write("This should appears\nThis should not appears.");
 		inputWriter.flush();
 		String input = ui.requestForQuestion(null);

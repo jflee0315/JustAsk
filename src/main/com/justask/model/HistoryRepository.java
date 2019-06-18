@@ -64,7 +64,7 @@ public class HistoryRepository {
     	}
     }
     
-	public static void replaceHistoryInFile(History h) {
+	private static void replaceHistoryInFile(History h) {
 		try {
 			 try (FileOutputStream fileOut = new FileOutputStream("history.txt");
 			    ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);) {
@@ -75,7 +75,7 @@ public class HistoryRepository {
             ex.printStackTrace();
         }
 	}
-	public static History retrieveHistoryFromFile() {
+	private static History retrieveHistoryFromFile() {
 		History result = null;
 		try {
 			try (FileInputStream  fileIn = new FileInputStream("history.txt");

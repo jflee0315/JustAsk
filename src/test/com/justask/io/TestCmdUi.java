@@ -22,14 +22,14 @@ class TestCmdUi {
 	}
 	
 	@Test
-	void shouldOutputCorrectly() {
+	void testOutputAnswer() {
 		String answer = "This is the ultimate answer to your question!";
 		ui.outputAnswer(answer);
 		assertEquals(answer, testOutput);
 	}
 	
 	@Test
-	void shouldProvideAnInput() {
+	void testRequestForQuestion() {
 		testInput = "Please provide an question, human!";
 		assertEquals(testInput, ui.requestForQuestion(testInput));
 	}

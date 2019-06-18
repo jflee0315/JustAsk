@@ -5,13 +5,23 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.justask.Exception.NoAnswerException;
 import com.justask.http.ConnectionUtil;
+import com.justask.http.ConnectionUtil.HttpException;
 
 class TestWolframService {
 
 	@Test
-	void shouldReturnAnswerWithoutError() {
+	void testAskForAnswer() {
 		WolframService s = new WolframService(ConnectionUtil.getInstance());
-		assertDoesNotThrow(()->s.askForAnswer("Some question"));
+		String result = null;
+		try {
+			result = s.askForAnswer("some question");
+		} catch (NoAnswerException e) {
+			// acceptable
+		} catch (HttpException e) {
+			// acceptable
+		}
+		assertNotNull(result);
 	}
 }

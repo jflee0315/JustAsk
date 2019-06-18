@@ -23,7 +23,7 @@ class TestAnswerServiceProvider {
 	 * NoAnswerException or an AnswerService are both acceptable
 	 */
 	@Test
-	void shouldProvideAnswerServiceOrNoAnswerException() {
+	void testCorrespondService() {
 		AnswerService service = null;
 		String question = "Some question";
 		try {

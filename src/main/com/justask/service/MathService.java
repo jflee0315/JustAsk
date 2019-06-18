@@ -10,7 +10,7 @@ import javax.script.ScriptException;
  * Service for solving math question
  *
 */
-public class SimpleMathService implements QuestionTypeJudge, AnswerService{
+public class MathService implements QuestionTypeJudge, AnswerService{
 
 	/**
 	 * Determine if the question is a simple math question.

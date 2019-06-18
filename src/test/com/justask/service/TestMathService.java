@@ -13,14 +13,14 @@ import org.junit.jupiter.api.Test;
  *
  */
 class TestMathService {
-	private SimpleMathService service;
+	private MathService service;
 	@BeforeEach
 	void setup() {
-		service = new SimpleMathService();
+		service = new MathService();
 	}
 
 	@Test
-	void shouldDetermineIfTheQuestionIsMath() {
+	void testIsType() {
 		QuestionTypeJudge judge = null;
 		try {
 			judge = (QuestionTypeJudge) service;
@@ -32,7 +32,7 @@ class TestMathService {
 	}
 	
 	@Test
-	void shouldProvideAnAnswer() {
+	void testProvideAnswer() {
 		String answer = service.provideAnswer("1+1");
 		assertNotEquals(null, answer);
 		assertNotEquals("", answer);

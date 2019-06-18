@@ -15,13 +15,13 @@ import com.justask.http.ConnectionUtil.HttpException;
 class TestConnectionUtil {
 
 	@Test
-	void shouldBeSingleton() {
+	void testGetInstance() {
 		assertSame(ConnectionUtil.getInstance(), ConnectionUtil.getInstance());
 		assertSame(ConnectionUtil.getInstance(), ConnectionUtil.getInstance());
 		assertSame(ConnectionUtil.getInstance(), ConnectionUtil.getInstance());
 	}
 	@Test
-	void shouldReceiveResponse() {
+	void testSendGet() {
 		String response = null;
 		try {
 			response = ConnectionUtil.getInstance().sendGet("https://www.bu.edu/");
