@@ -3,7 +3,7 @@ package com.justask.handler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TestJustAskHandler {
+class TestGeneralHandler {
 	
 	@Test
 	void testStart() {

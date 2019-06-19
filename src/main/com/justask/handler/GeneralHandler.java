@@ -11,7 +11,7 @@ import com.justask.validation.CommonValidator;
  * Main handler for the project
  *
  */
-public class JustAskHandler {
+public class GeneralHandler {
 	private AskUI ui;
 	private AnswerServiceProvider serviceProvider;
 	/**
@@ -20,7 +20,7 @@ public class JustAskHandler {
 	 * @param ui
 	 * @param serviceProvider
 	 */
-	public JustAskHandler(AskUI ui, AnswerServiceProvider serviceProvider) {
+	public GeneralHandler(AskUI ui, AnswerServiceProvider serviceProvider) {
 		this.ui = ui;
 		this.serviceProvider = serviceProvider;
 	}
